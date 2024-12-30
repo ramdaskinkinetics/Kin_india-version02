@@ -1,0 +1,75 @@
+// _base.scss
+
+// Import variables
+@import 'variables';
+
+// General Reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+}
+
+// Layout
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    color: $accent-color;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: $link-hover-color;
+}
+
+button {
+    background-color: $primary-color;
+    color: $background-color;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: $font-size-lg;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+// Utility classes
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
