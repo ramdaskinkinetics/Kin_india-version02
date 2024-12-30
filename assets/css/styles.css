@@ -1,97 +1,151 @@
-/* General Body and Layout */
+/* _variables.scss */
+
+// Colors
+:root {
+  --primary-color: #ffcc00; /* Gold */
+  --secondary-color: #003366; /* Navy */
+  --accent-color: #333333; /* Charcoal */
+  --background-color: #ffffff; /* White */
+  --text-color: #333333; /* Dark text */
+  --link-color: var(--primary-color); /* Links */
+  --link-hover-color: var(--secondary-color); /* Link hover color */
+  --font-family: 'Arial', sans-serif;
+  --heading-font-family: 'Helvetica Neue', sans-serif;
+  --font-size-base: 16px; /* Base font size */
+  --font-size-lg: 18px; /* Larger font size for headings */
+  --font-size-sm: 14px; /* Smaller font size */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1200px;
+}
+
+/* _base.scss */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+section {
+  margin-bottom: 3rem;
 }
 
-/* Contact Section */
-.contact-section {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  color: var(--accent-color);
 }
 
-.contact-section h2 {
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.contact-section p {
-    color: #555;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-label {
-    font-size: 16px;
-    color: #333;
-}
-
-input, textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-}
-
-button {
-    padding: 12px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* LinkedIn Link */
 a {
-    color: #0077b5;
-    text-decoration: none;
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+  color: var(--link-hover-color);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 15px;
-        margin: 20px;
-    }
+button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* _animations.scss */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-in-out;
+}
+
+.button-hover {
+  transition: transform 0.3s ease;
+}
+
+.button-hover:hover {
+  transform: scale(1.05);
 }
