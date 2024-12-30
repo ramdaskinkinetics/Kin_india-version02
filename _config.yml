@@ -1,0 +1,38 @@
+# _config.yml
+
+# Site information
+title: "KinKinetics DSS"
+description: "Decisions in Moments, Impact for a Lifetime!"
+url: "https://www.kinkinetics.com"  # Change to your actual site URL
+baseurl: ""  # If using a subfolder, set this value (e.g., "/kin-kinetics")
+
+# Markdown settings
+markdown: kramdown  # Choose the markdown processor, kramdown is the default
+
+# Site directories
+source: "."  # Jekyll source directory
+destination: "_site"  # Generated site location
+
+# Build settings
+plugins:
+  - jekyll-feed   # Enables RSS feed (optional)
+  - jekyll-seo-tag  # Adds SEO metadata tags (optional)
+
+# Sass settings
+sass:
+  sass_dir: _sass  # Directory for Sass files
+  style: compressed  # Minifies the compiled CSS (optional)
+
+# Permalinks configuration
+permalink: "/:categories/:year/:month/:day/:title.html"  # URL structure for posts
+
+# Build options
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Author information (optional)
+author:
+  name: "Your Name"
+  email: "your-email@example.com"
