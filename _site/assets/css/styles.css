@@ -1,28 +1,31 @@
-/* Base Styles latest */
+/* Updated CSS for Advanced Styling and Animations */
+
+/* Base Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #f4f4f9;
   overflow-x: hidden;
 }
 
-/* Header */
+/* Header Styles */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #fff;
+  background-color: #fff;
+  padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header a {
   color: #333;
   text-decoration: none;
   margin: 0 15px;
-  font-weight: bold;
+  font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
@@ -30,17 +33,18 @@ header a:hover {
   color: #007bff;
 }
 
-/* Smooth Scroll Animation */
+/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Sections */
+/* Section Styles */
 section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
+  background: #fff;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
@@ -51,34 +55,19 @@ section.active {
 
 /* Buttons */
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
-}
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Footer */
@@ -99,14 +88,13 @@ footer a:hover {
   color: #007bff;
 }
 
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
   header a {
     display: block;
     margin: 10px 0;
   }
-
   section {
-    padding: 60px 10px;
+    padding: 40px 10px;
   }
 }
