@@ -1,4 +1,5 @@
 # Gemfile
+source "https://rubygems.org"
 
 # Use the official Jekyll gem
 gem "jekyll", "~> 4.2"
