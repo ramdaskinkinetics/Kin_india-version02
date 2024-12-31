@@ -1,151 +1,112 @@
-/* _variables.scss */
-
-// Colors
-:root {
-  --primary-color: #ffcc00; /* Gold */
-  --secondary-color: #003366; /* Navy */
-  --accent-color: #333333; /* Charcoal */
-  --background-color: #ffffff; /* White */
-  --text-color: #333333; /* Dark text */
-  --link-color: var(--primary-color); /* Links */
-  --link-hover-color: var(--secondary-color); /* Link hover color */
-  --font-family: 'Arial', sans-serif;
-  --heading-font-family: 'Helvetica Neue', sans-serif;
-  --font-size-base: 16px; /* Base font size */
-  --font-size-lg: 18px; /* Larger font size for headings */
-  --font-size-sm: 14px; /* Smaller font size */
-  --padding-base: 1rem;
-  --margin-base: 1rem;
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 1024px;
-  --breakpoint-lg: 1200px;
-}
-
-/* _base.scss */
-
-*,
-*::before,
-*::after {
+/* Base Styles latest */
+body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
 }
 
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-section {
-  margin-bottom: 3rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--heading-font-family);
-  color: var(--accent-color);
-}
-
-a {
+header a {
+  color: #333;
   text-decoration: none;
-  color: var(--link-color);
-  transition: color 0.3s ease;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
 
-a:hover {
-  color: var(--link-hover-color);
+header a:hover {
+  color: #007bff;
 }
 
+/* Smooth Scroll Animation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
 button {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  padding: 0.8rem 1.2rem;
-  font-size: var(--font-size-lg);
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-.text-center {
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+footer a:hover {
+  color: #007bff;
 }
 
-/* _animations.scss */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+/* Responsive Design */
+@media (max-width: 768px) {
+  header a {
+    display: block;
+    margin: 10px 0;
   }
-  100% {
-    opacity: 1;
+
+  section {
+    padding: 60px 10px;
   }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-left {
-  animation: slideInLeft 1s ease-in-out;
-}
-
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
-  animation: slideInRight 1s ease-in-out;
-}
-
-.button-hover {
-  transition: transform 0.3s ease;
-}
-
-.button-hover:hover {
-  transform: scale(1.05);
 }
