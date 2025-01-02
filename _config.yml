@@ -31,8 +31,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - _site
 
 # Author information (optional)
 author:
-  name: "Your Name"
-  email: "your-email@example.com"
+  name: "Ramdas Rajan"
+  email: "ramdas@kinkinetics.com"
