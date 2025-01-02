@@ -23,4 +23,4 @@ gem "kramdown", "~> 2.3"
 gem "sassc", "~> 2.4"
 
 # Optional: If you want to add a specific theme
-# gem "minima", "~> 2.5"
+gem "minima", "~> 2.5"
