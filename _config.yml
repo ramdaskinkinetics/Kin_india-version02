@@ -10,10 +10,6 @@ theme: minima
 # Directories
 source: .
 destination: ./_site
-include:
-  - _includes # Ensure _includes directory is processed
-  - _sass     # Include custom SCSS partials
-  - assets    # Ensure assets are included in the build
 exclude:
   - node_modules
   - Gemfile
