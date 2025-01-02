@@ -1,47 +1,12 @@
 # Basic Jekyll Configuration
 title: KinKinetics
-description: >
-  KinKinetics - Decisions in Moments, Impact for a Lifetime.
-baseurl: "" # Leave empty if deploying to the root
-url: "http://localhost:4000" # Update this with your live site URL when deploying
+description: A Jekyll-powered website for KinKinetics.
+baseurl: "" # Leave empty for local development
+url: "http://localhost:4000" # Replace with your site's URL when deploying
+
+# Build Settings
 markdown: kramdown
 theme: minima
 
-# Directories
-source: .
-destination: ./_site
-include:
-  - _includes # Ensure _includes directory is processed
-  - _sass     # Include custom SCSS partials
-  - assets    # Ensure assets are included in the build
-exclude:
-  - node_modules
-  - Gemfile
-  - Gemfile.lock
-  
-
-# Sass/SCSS Configuration
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Plugins
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-# Defaults for Pages
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-      permalink: pretty
-
 # Permalinks
 permalink: pretty
-
-# Build Settings
-markdown_ext: "markdown,mkdown,mkdn,md"
-kramdown:
-  input: GFM
